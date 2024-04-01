@@ -22,6 +22,13 @@ export const Form = () => {
         })
     }
 
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+
+
+    }
+
     const isValidActivity = () => {
         const { calories, name } = activity;
 
@@ -73,6 +80,7 @@ export const Form = () => {
                 className="bg-gray-800 hover:bg-gray-900 w-full p-2 font-bold uppercase text-white cursor-pointer disabled:opacity-10"
                 value={`${activity.category === 1 ? 'Guardar comida' : 'Guardar ejercicio'} `}
                 disabled={!isValidActivity()}
+                onSubmit={() => handleSubmit}
             />
 
         </form>
